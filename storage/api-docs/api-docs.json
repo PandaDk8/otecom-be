@@ -1,0 +1,124 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger Otecom - OpenAPI 3.0",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "vietdoan77@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/categories": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Get list categories",
+                "operationId": "376f9ced3fb13490c3a8e54ed117a733",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "product"
+                ],
+                "summary": "Get list products",
+                "operationId": "getProducs",
+                "parameters": [
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Keyword",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Category slug",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "description": "Language for data. One of `en`,`vi`. Default `en`",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "en",
+                            "enum": [
+                                "en",
+                                "vi"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Length per page, default `8`",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page index ( for load more function ), default `1`",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/slider": {
+            "get": {
+                "tags": [
+                    "slider"
+                ],
+                "summary": "Get list slider",
+                "operationId": "getAllSlider",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "description": "Home page",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        }
+    }
+}
