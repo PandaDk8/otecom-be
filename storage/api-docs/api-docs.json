@@ -15,9 +15,7 @@
     "paths": {
         "/api/categories": {
             "get": {
-                "tags": [
-                    "category"
-                ],
+                "tags": ["category"],
                 "summary": "Get list categories",
                 "operationId": "376f9ced3fb13490c3a8e54ed117a733",
                 "responses": {
@@ -29,9 +27,7 @@
         },
         "/api/products": {
             "get": {
-                "tags": [
-                    "product"
-                ],
+                "tags": ["product"],
                 "summary": "Get list products",
                 "operationId": "getProducs",
                 "parameters": [
@@ -61,10 +57,7 @@
                         "schema": {
                             "type": "string",
                             "default": "en",
-                            "enum": [
-                                "en",
-                                "vi"
-                            ]
+                            "enum": ["en", "vi"]
                         }
                     },
                     {
@@ -98,24 +91,12 @@
         },
         "/api/slider": {
             "get": {
-                "tags": [
-                    "slider"
-                ],
+                "tags": ["slider"],
                 "summary": "Get list slider",
                 "operationId": "getAllSlider",
                 "responses": {
                     "200": {
                         "description": "successful operation"
-                    }
-                }
-            }
-        },
-        "/": {
-            "get": {
-                "description": "Home page",
-                "responses": {
-                    "default": {
-                        "description": "Welcome page"
                     }
                 }
             }
